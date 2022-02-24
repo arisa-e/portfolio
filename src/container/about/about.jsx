@@ -2,6 +2,7 @@ import React from 'react'
 import "./about.scss" 
 import { motion } from "framer-motion"
 import { images } from '../../constants'
+import { AppWrapper } from "../../wrapper"
 
 const about=[
   {title: "Web Development", description:"I'm Good at creating responsive websites with react ", imgUrl: images.reactjs },
@@ -37,4 +38,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrapper(About, "about")
