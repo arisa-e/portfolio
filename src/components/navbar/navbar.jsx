@@ -32,7 +32,7 @@ const Navbar = () => {
               <ul>
                 {['home', 'about', 'work', 'skills', 'contact'].map((item)=>
                   <li key={item}>
-                    <div />
+                    {/* <div /> */}
                     <a href={`#${item}`} onClick={()=>setToggle(false)}>{item}</a>
                   </li>
                 )}
