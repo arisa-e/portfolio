@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import "./about.scss" 
 import { motion } from "framer-motion"
-import { images } from '../../constants'
 import { AppWrapper } from "../../wrapper"
+import { urlFor, client } from '../../client'
 
-const about=[
-  {title: "Web Development", description:"I'm Good at creating responsive websites with react ", imgUrl: images.reactjs },
-  {title:"Web Design", description:"Able to work with different frameworks to make your web experience amazing ", imgUrl: images.design},
-  {title:"UI/UX", description:"i understand how figma works ", imgUrl: images.figma},
-  {title:"Web Animation", description:"having motion framer as my friend which i'm using in this website ", imgUrl: images.design2}
-]
 
 const About = () => {
+
+  const [about, setAbout] = useState([])
+
+  useEffect(() => {
+    const query =`*[_type == "about"]`
+    client.fetch(query)
+    .then((data)=> setAbout(data))
+  }, [])
+  
+
+
   return (
     <div className='app__about'>
+      <motion.div
+       whileInView={{x:[-100, 0], opacity:[0, 1]}}
+       transition={{duration: 0.5}}
+      >
     <h2 className='head-text'>You <span>Think</span> It
       <br />
       I <span>Design</span> it
@@ -28,12 +37,13 @@ const About = () => {
         className="app__profile-item"
         key={about.title + index}
         >
-          <img src={about.imgUrl} alt={about.title} />
+          <img src={urlFor(about.imgUrl)} alt={about.title} />
           <h2 className='bold-text' style={{marginTop: 20}}>{about.title}</h2>
           <p className='p-text' style={{marginTop:10}}>{about.description}</p>
         </motion.div>
         )}
-      </div>      
+      </div> 
+      </motion.div>     
     </div>
   )
 }
