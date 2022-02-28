@@ -2,7 +2,7 @@
   "name": "backend",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)",
   "main": "package.json",
   "author": "Emmanuel Arisa <emmanuelarisa7@gmail.com>",
   "license": "UNLICENSED",
