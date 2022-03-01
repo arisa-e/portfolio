@@ -25,10 +25,9 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cap app__flex">
-            {/* <span></span> */}
             <div style={{marginLeft: 20}}>
               <p className="p-text">Hello I'm</p>
-              <hi className="head-text">ARISA</hi>
+              <h1 className="head-text">ARISA</h1>
             </div>
           </div>
           <div className="tag-cap app__flex">
@@ -43,13 +42,6 @@ const Header = () => {
        className="app__header-img"
       >
         <img src={images.arisa} alt="arisa" />
-        {/* <motion.img
-        whileInView={{ scale:[0, 1]}}
-        transition={{duration: 1, ease: "easeInOut"}}
-        src={images.circle}
-        alt="arisa"
-        className="overlay-circle"
-        /> */}
       </motion.div>
       <motion.div
       variants={scaleVariants}
