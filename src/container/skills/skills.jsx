@@ -1,47 +1,41 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import "./skills.scss"
 import { AppWrapper } from "../../wrapper"
+import { images } from "../../constants"
 import { motion } from 'framer-motion'
-import { urlFor, client } from '../../client'
+
+
+const skillss=[
+  { title:"React", imgUrl: images.reactIcon},
+  { title:"Scss", imgUrl: images.sass},
+  { title:"Redux", imgUrl: images.redux},
+  { title:"Figma", imgUrl: images.figmaIcon},
+  { title:"git", imgUrl: images.git},
+  { title:"typescript", imgUrl: images.typescript},
+  { title:"javascript", imgUrl: images.javascript},
+  { title:"html", imgUrl: images.html},
+  { title:"css", imgUrl: images.css}
+]
 
 const Skills = () => {
-  const [skills, setSkills] = useState([])
 
-  useEffect(() => {
-    const query =`*[_type == "skills"]`
-    client.fetch(query)
-    .then((data)=> setSkills(data))
-  }, [])
-  
   return (
-    <div className='app__skills'>
-      <motion.div
-      whileInView={{x:[-100, 0], opacity:[0, 1]}}
-      transition={{duration: 0.5}}
-      >
-        <h2 className="head-text">Skills</h2>
-        <div className="app__skills-container">
+    <div className="app__skills">
+      <h2 className="head-text">Skills & Experiences</h2>
+
+      <div className="app__skills-container">
+        {skillss.map((skill, index)=>(
           <motion.div
-          className="app__skills-list"
+            className="skills"
+            key={skill.title + index}
           >
-            {skills.map((skill)=>
-              <motion.div
-              whileInView={{opacity:[0, 1]}}
-              transition={{duration: 0.5}}
-              className="app__skills-item app__flex"
-              key={skill.name}
-              >
-                <div className="app_flex" style={{backgroundColor: skill.bgColor}}>
-                  <img src={urlFor(skill.icon)} alt={skill.name} />
-                </div>
-                <p className="p-text">{skill.name}</p>
-              </motion.div>
-            )}
+            <img src={skill.imgUrl} alt=""/>
           </motion.div>
-        </div>
-      </motion.div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
+
 
 export default AppWrapper(Skills, "skills")
