@@ -63,11 +63,6 @@
         }
     }
 
-    &:hover {
-        div{
-            background: var(--secondary-color);
-        }
-    }
 
     @media screen and(max-width: 900px) {
         display: none;
