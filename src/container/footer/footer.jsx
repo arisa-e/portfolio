@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import "./footer.scss"
-import { images } from "../../constants"
-import { AppWrapper } from "../../wrapper"
 import { client } from "../../client"
+import { motion } from "framer-motion" 
+import { SiMinutemailer } from "react-icons/si"
+import { FcPhone } from "react-icons/fc"
+import { ImLocation } from "react-icons/im"
 
 const Footer = () => {
 
@@ -39,18 +41,33 @@ const Footer = () => {
 
 
   return (
-    <div className='app__footer'>
-      <h2 className="head-text">We are ready when you are </h2>
+    <div className='app__footer' id="contact">
+      <motion.div
+       whileInView={{x:[-100, 0], opacity:[0, 1]}}
+       transition={{duration: 0.5}}
+      >
+      <h2 className="head-text">I'm ready when you are </h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
-          <img src={images.email} alt="" />
+          <div className="app__icons">
+            <SiMinutemailer size={40}/>
+          </div>
           <a href="maiito:emmanuelarisa7@gma.com" className='p-text'>emmanuelarisa7@gmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={images.phone} alt="" />
+          <div className="app__icons">
+            <FcPhone size={40}/>
+          </div>
           <a href="tel :+254729928428" className='p-text'>+254729928428</a>
         </div>
+        <div className="app__footer-card">
+          <div className="app__icons">
+            <ImLocation size={40}/>
+          </div>
+          <a href="location : Niarobi Kenya" className='p-text'>Niarobi<br/> Kenya</a>
+        </div>
+        
       </div>
 
       {!isFormSubmitted ? (
@@ -79,8 +96,9 @@ const Footer = () => {
           </h3>
         </div>
       )}
+      </motion.div>
     </div>
   )
 }
 
-export default AppWrapper(Footer, "contact")
+export default Footer
