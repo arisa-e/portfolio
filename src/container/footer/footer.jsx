@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import "./footer.scss"
 import { client } from "../../client"
 import { motion } from "framer-motion" 
+import { AppWrapper } from "../../wrapper"
 import { SiMinutemailer } from "react-icons/si"
 import { FcPhone } from "react-icons/fc"
 import { ImLocation } from "react-icons/im"
-
+import { FaGithub, FaLinkedinIn, FaEnvelope} from "react-icons/fa"
 const Footer = () => {
 
   const [formData, setFormData] = useState({name:"", email:"", message:""})
@@ -41,7 +42,7 @@ const Footer = () => {
 
 
   return (
-    <div className='app__footer' id="contact">
+    <div className='app__footer'>
       <motion.div
        whileInView={{x:[-100, 0], opacity:[0, 1]}}
        transition={{duration: 0.5}}
@@ -90,15 +91,24 @@ const Footer = () => {
           <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
       ) : (
-        <div>
-          <h3 className="head-text">
-            Thank you for getting in touch!
-          </h3>
-        </div>
+        // <div>
+        //   <h3 className="head-text">
+        //     Thank you for getting in touch!
+        //   </h3>
+        // </div>
+         <div className="column"> 
+              <h3 className="title">Living, learning, &amp; leveling up one day at a time.</h3>
+          </div>
       )}
+        <div className="socialIcons" >
+              <a href="https://github.com/arisa-e" ><span class="icon is-small"><FaGithub size={30}/></span></a>
+              <a href="https://www.linkedin.com/in/emmanuel-arisa-01103b148/" ><span class="icon is-small"><FaLinkedinIn size={30}/></span></a>
+              <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=emmanuelarisa7@gmail.com" ><span class="icon is-small"><FaEnvelope size={30}/></span></a>
+        </div>
+          <p>Copyright © 2019 Arisa. All rights reserved</p>
       </motion.div>
     </div>
   )
 }
 
-export default Footer
+export default AppWrapper(Footer, "contact")
