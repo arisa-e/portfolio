@@ -2,7 +2,7 @@
     flex: 1;
     width: 100%;
     flex-direction: column;
-    margin-top: 15rem;
+    margin-top: 0.5rem;
     background: url("../../assets/blackBg.jpg");
     background-size: cover;
     overflow: hidden;
@@ -132,4 +132,42 @@
 
     
   }
+
+.column{
+    text-align: center;
+}
+
+.title {
+    font-weight: 300; 
+    font-size: 2.6rem; 
+    text-align: center;
+    margin: 2rem auto; 
+    max-width: 300px; 
+    opacity: 0.7; 
+
+    @media screen and (min-width: 769px) {
+      .title { 
+          max-width: 320px; 
+      } 
+   }
+}
+
+
+
+.socialIcons { 
+   display: flex;  
+    justify-content: center;  
+    align-items: center; 
+    
+  a{
+      margin-right:3rem; 
+    }
+
+    @media screen and (min-width: 769px) { 
+      .socialIcons { 
+          margin-right: 2.5rem; 
+      } 
+   }
+}
+
 
