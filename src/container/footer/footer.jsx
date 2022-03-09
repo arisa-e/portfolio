@@ -91,11 +91,6 @@ const Footer = () => {
           <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
       ) : (
-        // <div>
-        //   <h3 className="head-text">
-        //     Thank you for getting in touch!
-        //   </h3>
-        // </div>
          <div className="column"> 
               <h3 className="title">Living, learning, &amp; leveling up one day at a time.</h3>
           </div>
@@ -105,7 +100,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/in/emmanuel-arisa-01103b148/" ><span class="icon is-small"><FaLinkedinIn size={30}/></span></a>
               <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=emmanuelarisa7@gmail.com" ><span class="icon is-small"><FaEnvelope size={30}/></span></a>
         </div>
-          <p>Copyright © 2019 Arisa. All rights reserved</p>
+          <p>Copyright © 2019. All rights reserved</p>
       </motion.div>
     </div>
   )
