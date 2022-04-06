@@ -1,18 +1,23 @@
 .app__skills-container{
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
-    margin-left: 5rem;
+    flex-wrap: wrap; 
     overflow: hidden;
 
     img{
         width: 150px;
         height: 150px;
         filter: grayscale(1);
-        margin: 2.5rem;
+        margin: 2rem;
 
         &:hover{
             filter:grayscale(0)
+        }
+        @media screen and(max-width: 900px) {
+                margin: 2rem;
+                width: 100px;
+                height: 100px;
+            
         }
     }
 }

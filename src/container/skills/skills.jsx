@@ -23,7 +23,7 @@ const Skills = () => {
     <div className="app__skills">
       <h2 className="head-text">Skills & Experiences</h2>
 
-      <div className="app__skills-container">
+      <div className="app__skills-container app__flex">
         {skillss.map((skill, index)=>(
           <motion.div
             className="skills"

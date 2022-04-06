@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <div className='app__footer' id="contact">
-      <div className="app__footer-cards">
+      <div className="app__footer-cards app__flex">
         <div className="app__footer-card">
           <div className="app__icons">
             <SiMinutemailer size={40}/>
